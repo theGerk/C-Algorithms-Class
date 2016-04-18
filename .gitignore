@@ -1,0 +1,3 @@
+*.doNotCopy
+Debug/*
+*.vcxproj*
