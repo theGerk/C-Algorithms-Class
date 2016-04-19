@@ -79,15 +79,18 @@ void runAllSorts(const std::string& inputLine, std::ostream& outputStream)
 
 	inputFile.close();
 
-	auto callTest = [&myArray, &length, &outputStream](sortFunction sort, const std::string str) {	runTest(myArray, length, outputStream, sort, str);	};
+	auto callTest = [&myArray, &length, &outputStream](sortFunction sort, const std::string str) {	
+		runTest(myArray, length, outputStream, sort, str);	
+	
+	};
 
 	outputStream << discriptor << ":\n";
-	callTest(Sort::BubbleSort<int*>, "Bubble Sort");
-//	callTest(Sort::HeapSort<int*>, "Heap Sort");
-	callTest(Sort::InsertionSort<int*>, "Insertion Sort");
+//	callTest(Sort::BubbleSort<int*>, "Bubble Sort");
+	callTest(Sort::HeapSort<int*>, "Heap Sort");
+//	callTest(Sort::InsertionSort<int*>, "Insertion Sort");
 //	callTest(Sort::MergeSort<int*>, "Merge Sort");
 //	callTest(Sort::QuickSort<int*>, "Quick Sort");
-	callTest(Sort::SelectionSort<int*>, "Selection Sort");
+//	callTest(Sort::SelectionSort<int*>, "Selection Sort");
 	outputStream << '\n';
 
 	delete[] myArray;
